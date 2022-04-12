@@ -1,0 +1,26 @@
+.main-nav
+  .main-nav__header
+    h3.main-nav__title Menu
+    select.lang-switcher
+      option ru
+      option en
+    include ../pug/blocks/search-form.pug
+
+  nav.main-nav__wrapper
+    ul.main-nav__primary
+      each item in primaryMenuData
+        if !item.subitems
+          li.main-nav__item.main-nav__item--primary
+            a.main-nav__link.main-nav__link--primary(href=`${item.link}`)= item.title
+        else
+          ul.submenu.submenu--main-nav
+            each el in item.subitems
+              li.submenu__item.main-nav__item--primary
+                a.submenu__link.main-nav__link--primary(href=`${el.link}`)= el.title
+    ul.main-nav__secondary
+      each item in secondaryMenuData
+        li.main-nav__item.main-nav__item--secondary
+          a.main-nav__link.main-nav__link--secondary(href=`${item.link}`)= item.title
+
+  .main-nav__footer
+    +contacts.contacts--mobile-menu
