@@ -1,16 +1,17 @@
-$main-color:          #7dcbcf;
-$warning-color:       #fdc05d;
+$main-color:          #008ef8 ;
+$warning-color:       #fc4646;
 
 $white-color:         #ffffff;
 
-$gray-light:          #f2f2f2;
-$gray-dark:           #231f20;
+$gray-light:          #e8e8ea;
+$gray-medium:         i#8b8c98; /* = $gray-dark + opacity: 0.5*/
+$gray-dark:           #181a31;
 
 $text-color:          $gray-dark;
 
 $transparent-color:   rgba(255, 255, 255, 0);
 
-$font-family:         -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+$font-family:         OpenSans, Arial, 'Helvetica Neue', sans-serif;
 $font-size:           14px;
 $line-height:         1.4;
 

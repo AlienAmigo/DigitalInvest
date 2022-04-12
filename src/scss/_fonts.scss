@@ -1,9 +1,21 @@
-//@font-face {
-//  font-family: Montserrat;
-//  src:
-//    url('') format('woff2'),
-//    url('') format('woff');
-//  font-weight: 300;
-//  font-style: normal;
-//  font-display: block;
-//}
+@font-face {
+  font-family: OpenSans;
+  src:
+    url('../fonts/opensans-regular.woff2') format('woff2'),
+    url('../fonts/opensans-regular.woff') format('woff'),
+    url('../fonts/opensans-regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src:
+    url('../fonts/opensans-semibold.woff2') format('woff2'),
+    url('../fonts/opensans-semibold.woff') format('woff'),
+    url('../fonts/opensans-semibold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
