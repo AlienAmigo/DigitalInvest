@@ -1,0 +1,113 @@
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  height: calc(100vh - 50px);
+  animation: slideInRight 0.35s ease-in;
+
+  &__wrapper {
+    @include scroll-style(3px, #d2d9df);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: auto;
+    margin: 0 12px;
+  }
+
+  &__header {
+    display: flex;
+    gap: 16px;
+    padding: 25px 12px 15px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    transition: color 0.25s ease-in;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-color;
+    }
+
+    &--trigger {
+      &::after {
+        @include pseudo('block', 'relative', '');
+        width: 0;
+        height: 0;
+        margin: 1px 0 0 6px;
+        border-left: 5px solid $transparent-color;
+        border-right: 5px solid $transparent-color;
+        border-bottom: 7px solid $main-color;
+        transform: rotate(-180deg);
+        transition: transform 0.25s ease-in;
+      }
+    }
+
+    &.active {
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__items-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    padding-left: 20px;
+    overflow: hidden;
+    transition: height 0.5s ease-in;
+
+    &.active {
+      height: max-content;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration: none;
+    color: $text-color;
+    transition: color 0.25s ease-in;
+
+    &:active {
+      color: $main-color;
+    }
+
+    &:visited {
+      color: $text-color;
+    }
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #d2d9df;
+    padding: 12px 12px 6px;
+  }
+
+  &.active {
+    display: flex;
+  }
+}

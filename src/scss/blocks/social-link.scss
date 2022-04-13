@@ -1,0 +1,18 @@
+.social-link {
+  @include hover();
+  display: flex;
+  width: 32px;
+  height: 32px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--telegram {
+    background-image: url('../img/telegram-ico.svg');
+    background-size: 21.33px 17.78px;
+  }
+
+  &--whatsapp {
+    background-image: url('../img/whatsapp-ico.svg');
+    background-size: 20px 20px;
+  }
+}

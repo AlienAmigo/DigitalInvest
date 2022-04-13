@@ -1,0 +1,52 @@
+.contacts {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 33px;
+
+  &__phone-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  &__phone {
+    @include hover();
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+    font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
+    color: $main-color;
+    text-decoration: none;
+
+    &:visited {
+      color: $main-color;
+    }
+  }
+
+  &__order-phone-call {
+    @include hover();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 112px;
+    height: 32px;
+    border: none;
+    outline: 0;
+    background-color: $white-color;
+    color: $gray-medium;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 8px;
+  }
+
+  &--header {
+    display: none;
+  }
+}

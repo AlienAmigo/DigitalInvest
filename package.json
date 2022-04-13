@@ -53,6 +53,9 @@
     "stylelint": "^14.0.1",
     "stylelint-config-standard-scss": "^2.0.1",
     "stylelint-order": "^5.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-prettier": "^2.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1"
   },
   "dependencies": {

@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  max-height: 50px;
+  background: $white-color;
+  box-shadow:
+    0 60px 96px rgba(0, 0, 0, 0.00719),
+    0 30.0293px 48.0469px rgba(0, 0, 0, 0.010452),
+    0 18.0882px 28.9412px rgba(0, 0, 0, 0.012873),
+    0 11.5919px 18.547px rgba(0, 0, 0, 0.015),
+    0 7.51293px 12.0207px rgba(0, 0, 0, 0.017126),
+    0 4.72931px 7.56689px rgba(0, 0, 0, 0.019547),
+    0 2.71728px 4.34765px rgba(0, 0, 0, 0.02281),
+    0 1.19595px 1.91351px rgba(0, 0, 0, 0.03);
+
+  &__menu-burger-btn {
+    @include hover();
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: $main-color;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-image: url('../img/menu-burger.svg');
+    outline: 0;
+    transition: background-image 0.35s ease-in;
+    cursor: pointer;
+
+    &.active {
+      background-image: url('../img/x.svg');
+    }
+  }
+
+  &__cart {
+    @include hover();
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    outline: 0;
+
+    &::before {
+      @include pseudo('block', 'static', '');
+      width: 18px;
+      height: 18px;
+      background: url('../img/shopping-bag.svg') no-repeat center / auto;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}

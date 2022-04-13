@@ -7,12 +7,34 @@
     padding: 0;
 
     &::selection {
+      color: $white-color;
+      background-color: $main-color;
     }
   }
 
-  &__inner {}
+  body {
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 
-  &__content {}
+  &__inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
-  &__footer-wrapper {}
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &__footer-wrapper {
+    display: flex;
+  }
 }
