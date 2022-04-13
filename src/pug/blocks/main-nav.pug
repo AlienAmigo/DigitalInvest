@@ -1,9 +1,7 @@
 .main-nav#main-nav
   .main-nav__header
     h3.main-nav__title Меню
-    select.lang-switcher
-      option ru
-      option en
+    include ../blocks/lang-switcher.pug
     include ../blocks/search-form.pug
 
   nav.main-nav__wrapper
@@ -13,8 +11,8 @@
           li.main-nav__item.main-nav__item--primary
             a.main-nav__link.main-nav__link--primary(href=`${item.link}`)= item.title
         else
-          li.main-nav__item.main-nav__item--primary.main-nav__item--trigger= item.title
-          ul.main-nav__items-wrapper
+          li.main-nav__item.main-nav__item--primary.main-nav__item--trigger.active= item.title
+          ul.main-nav__items-wrapper.active
             each el in item.subitems
               li.main-nav__item.main-nav__item
                 a.main-nav__link.main-nav__link(href=`${el.link}`)= el.title

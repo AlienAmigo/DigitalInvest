@@ -1,0 +1,123 @@
+.lang-switcher {
+  display: flex;
+  flex: 1;
+  width: 28px;
+  min-width: 28px;
+  max-width: max-content;
+  height: 20px;
+  margin-top: 7px;
+  border: none;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: $gray-medium;
+  text-transform: uppercase;
+
+  & .choices {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &::after {
+      right: 0;
+      border-width: 5px 3.5px 0;
+      border-color:
+        $main-color
+        $transparent-color
+        $transparent-color
+        $transparent-color;
+      transform: rotate(0deg);
+      transition: transform 0.25s ease-in;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: max-content;
+      min-height: 100%;
+      border: none;
+      padding: 0;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      width: max-content;
+      border: none;
+      padding: 0;
+
+      &--dropdown {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        margin-top: 4px;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 0;
+        filter:
+          drop-shadow(0 60px 96px rgba(0, 0, 0, 0.00719))
+          drop-shadow(0 30.0293px 48.0469px rgba(0, 0, 0, 0.010452))
+          drop-shadow(0 18.0882px 28.9412px rgba(0, 0, 0, 0.012873))
+          drop-shadow(0 11.5919px 18.547px rgba(0, 0, 0, 0.015))
+          drop-shadow(0 7.51293px 12.0207px rgba(0, 0, 0, 0.017126))
+          drop-shadow(0 4.72931px 7.56689px rgba(0, 0, 0, 0.019547))
+          drop-shadow(0 2.71728px 4.34765px rgba(0, 0, 0, 0.02281))
+          drop-shadow(0 1.19595px 1.91351px rgba(0, 0, 0, 0.03));
+      }
+    }
+
+    &__item {
+      &,
+      &[data-choice-selectable] {
+        min-width: max-content;
+        border: none;
+        border-radius: 0;
+        padding: 5px 16px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        &.is-highlighted {
+          background-color: #f7f9fe;
+          box-shadow: none;
+          color: $main-color;
+          filter: none;
+        }
+      }
+
+      &:hover {
+        color: $main-color;
+      }
+
+      &--selectable {
+        padding: 0;
+      }
+
+      &.is-selected {
+        color: $main-color;
+      }
+    }
+
+    &.is-open {
+      &::after {
+        margin-top: -2.5px;
+        border-width: 5px 3.5px 0;
+        border-color:
+          $main-color
+          $transparent-color
+          $transparent-color
+          $transparent-color;
+        transform: rotate(180deg);
+      }
+    }
+
+    & .choices__inner { /* stylelint-disable-line selector-class-pattern
+ */
+      padding: 0;
+    }
+  }
+}
