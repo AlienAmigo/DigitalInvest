@@ -32,9 +32,30 @@
     display: flex;
     flex: 1;
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: left top 50px;
+    background-size: auto 100%;
+    background-image: url('../img/mock-bg.png');
   }
 
   &__footer-wrapper {
     display: flex;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .page {
+    &__content {
+      background-size: 100% auto;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .page {
+    &__content {
+      background-position: center top 100px;
+      background-size: 1200px auto;
+    }
   }
 }
