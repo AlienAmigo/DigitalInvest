@@ -43,4 +43,15 @@
     background: url('../img/search.svg') no-repeat center / auto;
     cursor: pointer;
   }
+
+  &--desktop {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: $screen-sm) {
+  .search-form {
+    width: 100%;
+  }
 }

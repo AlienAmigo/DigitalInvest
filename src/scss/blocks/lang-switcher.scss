@@ -39,6 +39,7 @@
       min-height: 100%;
       border: none;
       padding: 0;
+      background-color: $transparent-color;
       font-size: 12px;
       line-height: 20px;
     }
@@ -118,6 +119,23 @@
     & .choices__inner { /* stylelint-disable-line selector-class-pattern
  */
       padding: 0;
+    }
+  }
+
+  &--header {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .lang-switcher {
+    &--header {
+      display: flex;
+      margin: 0 auto;
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 }

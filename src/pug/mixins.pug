@@ -58,3 +58,16 @@ mixin contacts
       a.social-link.social-link--telegram(
         href='https://telegram.me/74998774145')
       a.social-link.social-link--whatsapp(href='https://wa.me/74998774145')
+
+//- lang switcher
+mixin lang-switcher
+  .lang-switcher(class=attributes.class)
+    select.js-choice
+      option ru
+      option en
+
+//- search form
+mixin search-form
+  form.search-form(method='POST', action='', class=attributes.class, id=attributes.id)
+    input.search-form__input(type='text', placeholder='Поиск...')
+    button.search-form__submit-btn(type='submit')

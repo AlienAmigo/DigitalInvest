@@ -1,13 +1,24 @@
 .main-nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  position: fixed;
+  position: absolute;
+  z-index: 0;
   top: 50px;
   width: 100%;
   height: calc(100vh - 50px);
-  animation: slideInRight 0.35s ease-in;
 
   &__wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    z-index: 50;
+    width: 100%;
+    margin-left: auto;
+    background-color: $white-color;
+    animation: slideInRight 0.35s ease-in;
+  }
+
+  &__menu-wrapper {
     @include scroll-style(3px, #d2d9df);
     display: flex;
     flex: 1;
@@ -33,7 +44,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 40px;
+    max-width: 100%;
+    min-height: 40px;
+    padding: 10px 0;
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
@@ -109,5 +122,43 @@
 
   &.active {
     display: flex;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .main-nav {
+    z-index: -1;
+    background-color: rgba(24, 26, 49, 0.5);
+    box-shadow:
+      0 60px 96px rgba(0, 0, 0, 0.00719) inset,
+      0 30.0293px 48.0469px rgba(0, 0, 0, 0.010452) inset,
+      0 18.0882px 28.9412px rgba(0, 0, 0, 0.012873) inset,
+      0 11.5919px 18.547px rgba(0, 0, 0, 0.015) inset,
+      0 7.51293px 12.0207px rgba(0, 0, 0, 0.017126) inset,
+      0 4.72931px 7.56689px rgba(0, 0, 0, 0.019547) inset,
+      0 2.71728px 4.34765px rgba(0, 0, 0, 0.02281) inset,
+      0 1.19595px 1.91351px rgba(0, 0, 0, 0.03) inset;
+    animation: fadeIn 0.2s ease-in;
+
+    &__wrapper {
+      background-color: $white-color;
+      max-width: 300px;
+    }
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid #d2d9df;
+      padding: 24px;
+    }
+
+    &__menu-wrapper {
+      padding: 16px 24px;
+    }
+
+    &__footer {
+      display: none;
+    }
   }
 }

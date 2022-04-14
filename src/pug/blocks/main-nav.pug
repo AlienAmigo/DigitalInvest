@@ -1,25 +1,26 @@
 .main-nav#main-nav
-  .main-nav__header
-    h3.main-nav__title Меню
-    include ../blocks/lang-switcher.pug
-    include ../blocks/search-form.pug
+  .main-nav__wrapper
+    .main-nav__header
+      h3.main-nav__title Меню
+      +lang-switcher.lang-switcher--mobile
+      +search-form.search-form--mobile
 
-  nav.main-nav__wrapper
-    ul.main-nav__primary
-      each item in primaryMenuData
-        if !item.subitems
-          li.main-nav__item.main-nav__item--primary
-            a.main-nav__link.main-nav__link--primary(href=`${item.link}`)= item.title
-        else
-          li.main-nav__item.main-nav__item--primary.main-nav__item--trigger.active= item.title
-          ul.main-nav__items-wrapper.active
-            each el in item.subitems
-              li.main-nav__item.main-nav__item
-                a.main-nav__link.main-nav__link(href=`${el.link}`)= el.title
-    ul.main-nav__secondary
-      each item in secondaryMenuData
-        li.main-nav__item.main-nav__item--secondary
-          a.main-nav__link.main-nav__link--secondary(href=`${item.link}`)= item.title
+    nav.main-nav__menu-wrapper
+      ul.main-nav__primary
+        each item in primaryMenuData
+          if !item.subitems
+            li.main-nav__item.main-nav__item--primary
+              a.main-nav__link.main-nav__link--primary(href=`${item.link}`)= item.title
+          else
+            li.main-nav__item.main-nav__item--primary.main-nav__item--trigger.active= item.title
+            ul.main-nav__items-wrapper.active
+              each el in item.subitems
+                li.main-nav__item.main-nav__item--pimary
+                  a.main-nav__link.main-nav__link--pimary(href=`${el.link}`)= el.title
+      ul.main-nav__secondary
+        each item in secondaryMenuData
+          li.main-nav__item.main-nav__item--secondary
+            a.main-nav__link.main-nav__link--secondary(href=`${item.link}`)= item.title
 
-  .main-nav__footer
-    +contacts.contacts--mobile-menu
+    .main-nav__footer
+      +contacts.contacts--mobile-menu

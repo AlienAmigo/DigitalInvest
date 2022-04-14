@@ -9,13 +9,15 @@ block meta
 
 block header
   header.header
+    .header__wrapper
+      +lang-switcher.lang-switcher--header
+      +contacts.contacts--header
+      .header__contacts
+      a.header__cart(href='#')
+        span Корзина
+      button#menu-burger.header__menu-burger-btn
     include ../pug/blocks/main-nav.pug
-    +contacts.contacts--header
-    .header__contacts
 
-    a.header__cart(href='#')
-      span Корзина
-    button#menu-burger.header__menu-burger-btn
 
 block content
 

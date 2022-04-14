@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   gap: 0 33px;
+  padding: 0 12px;
 
   &__phone-wrapper {
     display: flex;
@@ -48,5 +49,54 @@
 
   &--header {
     display: none;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .contacts {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    padding-right: 16px;
+
+    &::before {
+      @include pseudo();
+      top: 50%;
+      right: 0;
+      width: 1px;
+      height: 36px;
+      background-color: $gray-light;
+      transform: translateY(-50%);
+    }
+
+    &__phone-wrapper {
+      align-items: flex-end;
+      gap: 0;
+    }
+
+    &__phone {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: right;
+      font-feature-settings: 'tnum' on, 'lnum' on, 'cv03' on, 'cv04' on;
+      color: $text-color;
+    }
+
+    &__order-phone-call {
+      min-width: max-content;
+      height: 18px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__social-links {
+      gap: 12px;
+    }
+
+    &--header {
+      display: flex;
+    }
   }
 }

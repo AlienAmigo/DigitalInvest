@@ -12,11 +12,20 @@ function ready(fn) {
 
 ready(function () {
   const MenuBurgerBtn = document.querySelector('#menu-burger');
+  const MainMenuLinks = document.querySelectorAll('.main-nav__link');
   const MainMenu = document.querySelector('#main-nav');
-  if (MenuBurgerBtn) {
-    MenuBurgerBtn.addEventListener('click', ev => {
-      ev.target.classList.toggle('active');
-      MainMenu.classList.toggle('active');
+  const toggleMainMenu = () => {
+    MenuBurgerBtn.classList.toggle('active');
+    MainMenu.classList.toggle('active');
+  };
+
+  if (MenuBurgerBtn && MainMenu) {
+    MenuBurgerBtn.addEventListener('click', () => toggleMainMenu());
+    MainMenuLinks.forEach(item => {
+      item.addEventListener('click', ev => {
+        ev.stopPropagation();
+        toggleMainMenu();
+      });
     });
   }
 
@@ -36,7 +45,14 @@ ready(function () {
       searchEnabled: false,
       itemSelectText: '',
       silent: true,
-      shouldSort: false,
+      shouldSort: false
+    });
+  });
+
+  const SearchForms = document.querySelectorAll('.search-form');
+  SearchForms.forEach(item => {
+    item.addEventListener('submit', ev => {
+      ev.preventDefault();
     });
   });
 
