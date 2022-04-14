@@ -12,11 +12,12 @@
             li.main-nav__item.main-nav__item--primary
               a.main-nav__link.main-nav__link--primary(href=`${item.link}`)= item.title
           else
-            li.main-nav__item.main-nav__item--primary.main-nav__item--trigger.active= item.title
-            ul.main-nav__items-wrapper.active
-              each el in item.subitems
-                li.main-nav__item.main-nav__item--pimary
-                  a.main-nav__link.main-nav__link--pimary(href=`${el.link}`)= el.title
+            .main-nav__submenu-wrapper
+              li.main-nav__item.main-nav__item--primary.main-nav__item--trigger.active= item.title
+              ul.main-nav__items-wrapper
+                each el in item.subitems
+                  li.main-nav__item.main-nav__item--primary.main-nav__item--subitem
+                    a.main-nav__link.main-nav__link--primary(href=`${el.link}`)= el.title
       ul.main-nav__secondary
         each item in secondaryMenuData
           li.main-nav__item.main-nav__item--secondary

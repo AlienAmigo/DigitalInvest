@@ -658,10 +658,10 @@
           }
         ],
       'selector-max-class': [
-          3,
+          4,
           {
             # "severity": "warning",
-            'message': 'Классов в селекторе более двух использовать не стоит'
+            'message': 'Классов в селекторе более четырёх использовать не стоит'
           }
         ],
       'selector-max-combinators': [

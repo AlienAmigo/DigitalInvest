@@ -10,13 +10,14 @@ block meta
 block header
   header.header
     .header__wrapper
+      include ../pug/blocks/main-nav.pug
       +lang-switcher.lang-switcher--header
       +contacts.contacts--header
       .header__contacts
       a.header__cart(href='#')
+        .header__cart-counter 2
         span Корзина
       button#menu-burger.header__menu-burger-btn
-    include ../pug/blocks/main-nav.pug
 
 
 block content

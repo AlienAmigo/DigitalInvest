@@ -139,3 +139,29 @@
     }
   }
 }
+
+@media screen and (min-width: $screen-lg) {
+  .lang-switcher {
+    .choices {
+      /* stylelint-disable */
+      &.is-open {
+        & > .choices__inner {
+          & > .choices__list.choices__list--single {
+            .choices__item.choices__item--selectable {
+              color: $white-color;
+              transition: color 0.15s ease-in;
+            }
+          }
+        }
+      }
+      /* stylelint-enable */
+    }
+
+    &--header {
+      position: absolute;
+      top: -30px;
+      left: 15px;
+      margin: 0;
+    }
+  }
+}
