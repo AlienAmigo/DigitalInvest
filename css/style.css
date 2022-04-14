@@ -420,6 +420,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-repeat: no-repeat;
+  background-position: left top 50px;
+  background-size: auto 100%;
+  background-image: url("../img/mock-bg.png");
 }
 .page__footer-wrapper {
   display: -webkit-box;
@@ -427,6 +431,17 @@
   display: flex;
 }
 
+@media screen and (min-width: 768px) {
+  .page__content {
+    background-size: 100% auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page__content {
+    background-position: center top 100px;
+    background-size: 1200px auto;
+  }
+}
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -573,6 +588,7 @@
   .header {
     width: 1200px;
     height: 100px;
+    max-height: 100px;
     margin: 0 auto;
     padding: 0 15px;
     background-color: rgba(255, 255, 255, 0);
